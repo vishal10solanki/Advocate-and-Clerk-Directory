@@ -1186,7 +1186,7 @@
           Please enter your Admin PIN to unlock directory management tools.
         </p>
         <div class="input-group">
-          <label for="adminPinInput">Security PIN</label>
+          <label for="adminPasswordInput">Security Password / PIN</label>
           <input type="password" id="adminPasswordInput" class="text-input pin-masked-input"   placeholder="Enter Password" autocomplete="current-password" inputmode="text">
           <div id="pinErrorMsg" style="display: none; color: var(--danger); font-size: 0.8rem; margin-top: 4px;"></div>
         </div>
@@ -1491,14 +1491,18 @@
       }
     }
 
+    function getPinInputElement() {
+      return document.getElementById("adminPasswordInput") || document.getElementById("adminPinInput");
+    }
+
     function openAdminPinModal() {
       const modal = document.getElementById("adminPinModal");
-      const inp = document.getElementById("adminPinInput");
+      const inp = getPinInputElement();
       const err = document.getElementById("pinErrorMsg");
-      inp.value = "";
-      err.style.display = "none";
+      if (inp) inp.value = "";
+      if (err) err.style.display = "none";
       modal.classList.add("open");
-      setTimeout(() => inp.focus(), 150);
+      setTimeout(() => { if (inp) inp.focus(); }, 150);
     }
 
     function closeAdminPinModal() {
@@ -1506,7 +1510,8 @@
     }
 
     function verifyAdminPin() {
-      const entered = document.getElementById("adminPinInput").value.trim();
+      const pinEl = getPinInputElement();
+      const entered = pinEl ? pinEl.value.trim() : "";
       const actualPin = getAdminPin();
       const err = document.getElementById("pinErrorMsg");
 
@@ -1542,9 +1547,12 @@
       document.getElementById("pwaInstallHeaderBtn").addEventListener("click", handlePwaInstallClick);
       document.getElementById("themeToggleHeadBtn").addEventListener("click", toggleTheme);
       document.getElementById("btnConfirmAdminPin").addEventListener("click", verifyAdminPin);
-      document.getElementById("adminPinInput").addEventListener("keydown", (e) => {
-        if (e.key === "Enter") verifyAdminPin();
-      });
+      const pinInp = getPinInputElement();
+      if (pinInp) {
+        pinInp.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") verifyAdminPin();
+        });
+      }
 
       // Navigation
       document.getElementById("navAdvocatesTab").addEventListener("click", () => switchBottomTab("advocates"));
