@@ -1776,18 +1776,26 @@
           }).join("");
         }
 
-        // 3. PANEL ADVOCATE HIGHLIGHTING (Requirement #3)
+        // 3. PANEL ADVOCATE HIGHLIGHTING (Filtered to show only matching panels during search)
         let panelBadges = "";
         if (isPanel) {
           const panels = adv.panel.includes(";") ? adv.panel.split(";") : adv.panel.split(String.fromCharCode(10));
-          panelBadges = panels.map(p => p.trim()).filter(Boolean).map(p => `
-            <span class="chip-panel-badge" title="Panel Advocate">
-              <span>⚖️ Panel:</span>
-              <span>${escapeHtml(p)}</span>
-            </span>
-          `).join("");
-        }
+          const cleanPanels = panels.map(p => p.trim()).filter(Boolean);
 
+          // If searching, only display panels matching the search query; otherwise show all
+          const visiblePanels = searchQuery 
+            ? cleanPanels.filter(p => p.toLowerCase().includes(searchQuery))
+            : cleanPanels;
+
+          if (visiblePanels.length > 0) {
+            panelBadges = visiblePanels.map(p => `
+              <span class="chip-panel-badge" title="Panel Advocate">
+                <span>⚖️ Panel:</span>
+                <span>${escapeHtml(p)}</span>
+              </span>
+            `).join("");
+          }
+        }
         // Contact rows
         let contactRows = "";
         if (adv.primaryMobile) contactRows += renderDirectActionRow(adv.primaryMobile, "Primary");
