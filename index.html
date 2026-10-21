@@ -1675,9 +1675,9 @@
       document.getElementById("bottomNavClerkCount").textContent = clerkTotal.toLocaleString();
     }
 
-    // Filter Logic
+    // Filter Logic (Requirement #1: Exclude Mobile Numbers from Search)
     function getFilteredAdvocates() {
-      const q = searchQuery;
+      const q = searchQuery.trim().toLowerCase();
       return directory.advocates.filter(adv => {
         if (activeFilter === "panel" && !adv.panel) return false;
         if (activeFilter === "has-clerk" && (!adv.clerkIds || adv.clerkIds.length === 0)) return false;
@@ -1686,34 +1686,21 @@
 
         if (!q) return true;
 
+        // Strictly search advocate name, bar code, and panel (no mobile numbers)
         if (adv.name && adv.name.toLowerCase().includes(q)) return true;
         if (adv.code && adv.code.toLowerCase().includes(q)) return true;
         if (adv.panel && adv.panel.toLowerCase().includes(q)) return true;
 
-        if (adv.clerkIds && adv.clerkIds.length > 0) {
-          for (let cid of adv.clerkIds) {
-            const clerk = directory.clerks.find(c => c.id === cid);
-            if (clerk) {
-              if (clerk.name && clerk.name.toLowerCase().includes(q)) return true;
-            }
-          }
-        }
         return false;
       });
     }
 
     function getFilteredClerks() {
-      const q = searchQuery;
+      const q = searchQuery.trim().toLowerCase();
       return directory.clerks.filter(clerk => {
         if (!q) return true;
-        if (clerk.name && clerk.name.toLowerCase().includes(q)) return true;
-
-        const linked = directory.advocates.filter(a => a.clerkIds && a.clerkIds.includes(clerk.id));
-        for (let a of linked) {
-          if (a.name && a.name.toLowerCase().includes(q)) return true;
-          if (a.code && a.code.toLowerCase().includes(q)) return true;
-        }
-        return false;
+        // Strictly search clerk name (no mobile numbers)
+        return !!(clerk.name && clerk.name.toLowerCase().includes(q));
       });
     }
 
@@ -1723,6 +1710,7 @@
       const list = getFilteredAdvocates();
       const countNotice = document.getElementById("resultsCountNotice");
       const loadMoreBtn = document.getElementById("advLoadMoreBtn");
+      const q = searchQuery.trim().toLowerCase();
 
       countNotice.textContent = "Showing " + Math.min(advVisibleCount, list.length).toLocaleString() + " of " + list.length.toLocaleString() + " Advocates";
       loadMoreBtn.style.display = advVisibleCount < list.length ? "inline-flex" : "none";
@@ -1774,11 +1762,25 @@
           }).join("");
         }
 
-        // 3. PANEL ADVOCATE HIGHLIGHTING (Requirement #3)
+        // 3. PANEL ADVOCATE HIGHLIGHTING (Requirement #2: Filter Panel Badges During Search)
         let panelBadges = "";
         if (isPanel) {
-          const panels = adv.panel.includes(";") ? adv.panel.split(";") : adv.panel.split(String.fromCharCode(10));
-          panelBadges = panels.map(p => p.trim()).filter(Boolean).map(p => `
+          let rawPanels = [];
+          if (adv.panel.includes(";")) {
+            rawPanels = adv.panel.split(";");
+          } else if (adv.panel.includes(String.fromCharCode(10))) {
+            rawPanels = adv.panel.split(String.fromCharCode(10));
+          } else if (adv.panel.includes(",") && (adv.panel.includes("Nagarpalika") || adv.panel.includes("Panel") || adv.panel.includes("PCIT"))) {
+            rawPanels = adv.panel.split(",");
+          } else {
+            rawPanels = [adv.panel];
+          }
+          let panelList = rawPanels.map(p => p.trim()).filter(Boolean);
+          // If a search query is active, filter individual panel badges to display ONLY matching panel name(s)
+          if (q) {
+            panelList = panelList.filter(p => p.toLowerCase().includes(q));
+          }
+          panelBadges = panelList.map(p => `
             <span class="chip-panel-badge" title="Panel Advocate">
               <span>⚖️ Panel:</span>
               <span>${escapeHtml(p)}</span>
