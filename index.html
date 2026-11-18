@@ -997,6 +997,232 @@
       cursor: pointer;
       box-shadow: var(--shadow-subtle);
     }
+
+    /* PDF DOCUMENTS SECTION */
+    .docs-hero-card {
+      background: linear-gradient(135deg, var(--primary-container) 0%, var(--surface) 100%);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius-lg);
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-card);
+    }
+
+    [data-theme="dark"] .docs-hero-card {
+      background: linear-gradient(135deg, #1e3a8a55 0%, var(--surface) 100%);
+    }
+
+    .docs-hero-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+    }
+
+    .docs-hero-info h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .docs-hero-info p {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .doc-card {
+      background: var(--surface);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .doc-card:hover {
+      border-color: var(--outline-variant);
+      box-shadow: var(--shadow-float);
+    }
+
+    .doc-card-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .doc-pdf-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: var(--radius-md);
+      background: #fee2e2;
+      color: #dc2626;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    [data-theme="dark"] .doc-pdf-badge {
+      background: #7f1d1d55;
+      color: #fca5a5;
+    }
+
+    .doc-badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 5px;
+    }
+
+    .doc-category-pill {
+      background: var(--primary-container);
+      color: var(--primary);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+    }
+
+    [data-theme="dark"] .doc-category-pill {
+      color: #93c5fd;
+    }
+
+    .doc-format-pill {
+      background: var(--surface-variant);
+      color: var(--text-secondary);
+      border: 1px solid var(--outline);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: var(--radius-sm);
+    }
+
+    .doc-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .doc-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    .doc-meta-strip {
+      background: var(--surface-variant);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius-sm);
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.74rem;
+    }
+
+    .doc-filename {
+      color: var(--text-primary);
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .doc-count-meta {
+      color: var(--primary);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    [data-theme="dark"] .doc-count-meta {
+      color: #93c5fd;
+    }
+
+    .btn-download-pdf {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: var(--radius-md);
+      background: var(--primary);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.25);
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .btn-download-pdf:active {
+      transform: scale(0.98);
+    }
+
+    .btn-download-pdf:disabled {
+      opacity: 0.7;
+      cursor: wait;
+    }
+
+    .docs-admin-bar {
+      display: none;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+      align-items: center;
+    }
+
+    .docs-admin-bar.unlocked {
+      display: flex;
+    }
+
+    .btn-doc-delete {
+      min-width: 40px;
+      min-height: 40px;
+      border-radius: var(--radius-md);
+      border: 1px solid #fecaca;
+      background: #fef2f2;
+      color: var(--danger);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.15s ease, transform 0.12s ease;
+    }
+
+    [data-theme="dark"] .btn-doc-delete {
+      background: #7f1d1d44;
+      border-color: #991b1b;
+      color: #fca5a5;
+    }
+
+    .btn-doc-delete:active {
+      transform: scale(0.95);
+    }
   </style>
 </head>
 <body>
@@ -1094,7 +1320,37 @@
       </div>
     </section>
 
-    <!-- TAB 3: ADMIN DATA MANAGEMENT (Revealed ONLY after unlocking PIN!) -->
+    <!-- TAB 3: PDF DOCUMENTS -->
+    <section id="viewDocsTab" style="display: none;">
+      <div class="docs-hero-card">
+        <div class="docs-hero-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
+        </div>
+        <div class="docs-hero-info">
+          <h2>PDF Registers &amp; Documents</h2>
+          <p>Download print-ready A4 PDF documents generated directly from the live directory dataset.</p>
+        </div>
+      </div>
+
+      <!-- Admin-only PDF management bar -->
+      <div class="docs-admin-bar" id="docsAdminActionsBar">
+        <button class="btn-create" id="btnAdminAddPdf" style="min-height: 44px; padding: 8px 16px;">+ Add PDF</button>
+        <button class="btn-modal-cancel" id="btnAdminRestorePdfs" style="display: none; min-height: 44px;">Restore Default PDFs</button>
+      </div>
+
+      <div class="filter-chips-scroll" id="docsCategoryChipsRow" style="margin-bottom: 10px;">
+        <div class="filter-pill active" data-doc-cat="All">All Documents</div>
+        <div class="filter-pill" data-doc-cat="Court Forms">Court Forms</div>
+        <div class="filter-pill" data-doc-cat="Full Register">Full Register</div>
+        <div class="filter-pill" data-doc-cat="Empanelment">Empanelment</div>
+        <div class="filter-pill" data-doc-cat="Clerks Register">Clerks Register</div>
+        <div class="filter-pill" data-doc-cat="Quick Reference">Quick Reference</div>
+      </div>
+
+      <div class="cards-grid" id="docsCardsGrid"></div>
+    </section>
+
+    <!-- TAB 4: ADMIN DATA MANAGEMENT (Revealed ONLY after unlocking PIN!) -->
     <section id="viewAdminTab" style="display: none;">
       <div style="background: var(--surface); border: 1px solid var(--outline); border-radius: var(--radius-lg); padding: 20px; display: flex; flex-direction: column; gap: 18px; box-shadow: var(--shadow-card);">
         <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--outline); padding-bottom: 12px;">
@@ -1161,7 +1417,15 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
       </div>
       <span>Clerks</span>
-      <span class="nav-badge-dot" id="bottomNavClerkCount" style="background: #16a34a;">119</span>
+      <span class="nav-badge-dot" id="bottomNavClerkCount" style="background: #16a34a;">145</span>
+    </button>
+
+    <button class="nav-item-btn" id="navDocsTab">
+      <div class="nav-icon-wrapper">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+      </div>
+      <span>PDF Docs</span>
+      <span class="nav-badge-dot" id="bottomNavDocsCount" style="background: #dc2626;">7</span>
     </button>
 
     <!-- Admin Tab: Shows when Admin unlocked -->
@@ -1309,6 +1573,49 @@
     </div>
   </div>
 
+  <!-- ADMIN ADD PDF DOCUMENT MODAL -->
+  <div class="modal-overlay" id="pdfAddModal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3>Add PDF Document</h3>
+        <button class="modal-close-btn" onclick="closeAddPdfModal()">✕</button>
+      </div>
+      <div class="modal-content-area">
+        <p style="font-size: 0.82rem; color: var(--text-secondary);">
+          Admin only: Upload a PDF document and enter its display details.
+        </p>
+        <input type="file" id="pdfAddFileInput" accept=".pdf,application/pdf" style="display: none;">
+        <button type="button" class="btn-modal-cancel" id="btnChoosePdfFile" style="width: 100%; min-height: 44px;">
+          📎 Choose PDF File (.pdf)
+        </button>
+        <div id="pdfSelectedFileStatus" style="display: none; font-size: 0.8rem; padding: 8px 10px; border-radius: var(--radius-sm); background: var(--primary-container); color: var(--primary); font-weight: 600;"></div>
+        <div class="input-group">
+          <label for="pdfAddTitle">Document Title *</label>
+          <input type="text" id="pdfAddTitle" class="text-input" placeholder="e.g. Vakalatnama Form">
+        </div>
+        <div class="input-group">
+          <label for="pdfAddCategory">Category</label>
+          <input type="text" id="pdfAddCategory" list="pdfCategoryPresets" class="text-input" value="Court Forms" placeholder="Court Forms, Notices, Custom...">
+          <datalist id="pdfCategoryPresets">
+            <option value="Court Forms"></option>
+            <option value="Notices"></option>
+            <option value="Circulars"></option>
+            <option value="Custom"></option>
+          </datalist>
+        </div>
+        <div class="input-group">
+          <label for="pdfAddDesc">Description (Optional)</label>
+          <input type="text" id="pdfAddDesc" class="text-input" placeholder="Short note shown on the PDF card">
+        </div>
+        <div id="pdfAddErrorMsg" style="display: none; color: var(--danger); font-size: 0.8rem; font-weight: 600;"></div>
+      </div>
+      <div class="modal-action-row">
+        <button class="btn-modal-cancel" onclick="closeAddPdfModal()">Cancel</button>
+        <button class="btn-modal-primary" id="btnSavePdfDoc">Add PDF</button>
+      </div>
+    </div>
+  </div>
+
   <!-- TOAST CONTAINER -->
   <div class="toast-wrap" id="appToastContainer"></div>
 
@@ -1321,13 +1628,19 @@
     const KEY_ADMIN = "adv_clerk_pwa_admin_active";
     const KEY_PIN = "adv_clerk_pwa_pin";
     const KEY_THEME = "adv_clerk_pwa_theme";
+    const KEY_CUSTOM_PDFS = "adv_clerk_pwa_custom_pdfs_v1";
+    const KEY_HIDDEN_PDFS = "adv_clerk_pwa_hidden_pdfs_v1";
     const PRIMARY_PIN = "8899";
     const FALLBACK_PIN = "HighCourt541";
 
     let directory = { advocates: [], clerks: [] };
+    let customPdfDocs = [];
+    let hiddenBuiltInPdfIds = [];
+    let pendingCustomPdfPayload = null;
     let isAdmin = false;
     let currentTab = "advocates";
     let activeFilter = "all";
+    let activeDocCategory = "All";
     let searchQuery = "";
 
     const ADV_PAGE_SIZE = 40;
@@ -1446,11 +1759,33 @@
       }
 
       isAdmin = localStorage.getItem(KEY_ADMIN) === "true";
+      try {
+        const savedCustom = localStorage.getItem(KEY_CUSTOM_PDFS);
+        customPdfDocs = savedCustom ? JSON.parse(savedCustom) : [];
+        if (!Array.isArray(customPdfDocs)) customPdfDocs = [];
+      } catch (_) {
+        customPdfDocs = [];
+      }
+      try {
+        const savedHidden = localStorage.getItem(KEY_HIDDEN_PDFS);
+        hiddenBuiltInPdfIds = savedHidden ? JSON.parse(savedHidden) : [];
+        if (!Array.isArray(hiddenBuiltInPdfIds)) hiddenBuiltInPdfIds = [];
+      } catch (_) {
+        hiddenBuiltInPdfIds = [];
+      }
       syncAdminRoleUI();
     }
 
     function saveData() {
       localStorage.setItem(KEY_DATA, JSON.stringify(directory));
+    }
+
+    function saveCustomPdfDocs() {
+      localStorage.setItem(KEY_CUSTOM_PDFS, JSON.stringify(customPdfDocs));
+    }
+
+    function saveHiddenBuiltInPdfIds() {
+      localStorage.setItem(KEY_HIDDEN_PDFS, JSON.stringify(hiddenBuiltInPdfIds));
     }
 
     function getAdminPin() {
@@ -1479,15 +1814,21 @@
       const adminPill = document.getElementById("adminActivePill");
       const adminActionsBar = document.getElementById("adminHeaderActionsBar");
       const adminNavTab = document.getElementById("navAdminTab");
+      const docsAdminBar = document.getElementById("docsAdminActionsBar");
+      const restoreBtn = document.getElementById("btnAdminRestorePdfs");
 
       if (isAdmin) {
         adminPill.classList.add("active");
         adminActionsBar.classList.add("unlocked");
         adminNavTab.style.display = "flex";
+        if (docsAdminBar) docsAdminBar.classList.add("unlocked");
+        if (restoreBtn) restoreBtn.style.display = hiddenBuiltInPdfIds.length > 0 ? "inline-flex" : "none";
       } else {
         adminPill.classList.remove("active");
         adminActionsBar.classList.remove("unlocked");
         adminNavTab.style.display = "none";
+        if (docsAdminBar) docsAdminBar.classList.remove("unlocked");
+        if (restoreBtn) restoreBtn.style.display = "none";
         if (currentTab === "admin") {
           switchBottomTab("advocates");
         }
@@ -1552,6 +1893,7 @@
       // Navigation
       document.getElementById("navAdvocatesTab").addEventListener("click", () => switchBottomTab("advocates"));
       document.getElementById("navClerksTab").addEventListener("click", () => switchBottomTab("clerks"));
+      document.getElementById("navDocsTab").addEventListener("click", () => switchBottomTab("docs"));
       document.getElementById("navAdminTab").addEventListener("click", () => switchBottomTab("admin"));
       document.getElementById("btnAdminLogoutFromTab").addEventListener("click", () => {
         isAdmin = false;
@@ -1581,15 +1923,23 @@
         renderAllViews();
       });
 
-      // Filter Chips
-      document.querySelectorAll(".filter-pill").forEach(chip => {
+      // Filter Chips (Advocates)
+      document.querySelectorAll("#advFilterChipsRow .filter-pill").forEach(chip => {
         chip.addEventListener("click", () => {
-          document.querySelectorAll(".filter-pill").forEach(c => c.classList.remove("active"));
+          document.querySelectorAll("#advFilterChipsRow .filter-pill").forEach(c => c.classList.remove("active"));
           chip.classList.add("active");
           activeFilter = chip.getAttribute("data-filter");
           advVisibleCount = ADV_PAGE_SIZE;
           renderAdvocates();
         });
+      });
+
+      // Category Chips (PDF Docs - Event Delegation for dynamic categories)
+      document.getElementById("docsCategoryChipsRow").addEventListener("click", (e) => {
+        const chip = e.target.closest(".filter-pill");
+        if (!chip) return;
+        activeDocCategory = chip.getAttribute("data-doc-cat") || "All";
+        renderDocs();
       });
 
       // Load More
@@ -1609,6 +1959,15 @@
       document.getElementById("btnSaveAdvocateRecord").addEventListener("click", saveAdvocateRecord);
       document.getElementById("btnSaveClerkRecord").addEventListener("click", saveClerkRecord);
       document.getElementById("btnAssignClerkToAdv").addEventListener("click", handleAssignClerkToAdv);
+
+      // Admin PDF Document Management
+      document.getElementById("btnAdminAddPdf").addEventListener("click", openAddPdfModal);
+      document.getElementById("btnAdminRestorePdfs").addEventListener("click", restoreDefaultPdfDocuments);
+      document.getElementById("btnChoosePdfFile").addEventListener("click", () => {
+        document.getElementById("pdfAddFileInput").click();
+      });
+      document.getElementById("pdfAddFileInput").addEventListener("change", handlePdfFileSelected);
+      document.getElementById("btnSavePdfDoc").addEventListener("click", saveCustomPdfRecord);
 
       // Admin Data Management
       document.getElementById("btnExportCsvAdmin").addEventListener("click", exportDirectoryCsv);
@@ -1640,6 +1999,7 @@
 
       document.getElementById("viewAdvocatesTab").style.display = tab === "advocates" ? "block" : "none";
       document.getElementById("viewClerksTab").style.display = tab === "clerks" ? "block" : "none";
+      document.getElementById("viewDocsTab").style.display = tab === "docs" ? "block" : "none";
       document.getElementById("viewAdminTab").style.display = tab === "admin" ? "block" : "none";
 
       const filterChips = document.getElementById("advFilterChipsRow");
@@ -1649,9 +2009,15 @@
       if (tab === "advocates") {
         document.getElementById("navAdvocatesTab").classList.add("active");
         if (searchInputEl) searchInputEl.placeholder = "Search advocate name, code, panel...";
+        renderAdvocates();
       } else if (tab === "clerks") {
         document.getElementById("navClerksTab").classList.add("active");
         if (searchInputEl) searchInputEl.placeholder = "Search clerk name...";
+        renderClerks();
+      } else if (tab === "docs") {
+        document.getElementById("navDocsTab").classList.add("active");
+        if (searchInputEl) searchInputEl.placeholder = "Search PDF documents...";
+        renderDocs();
       } else if (tab === "admin") {
         document.getElementById("navAdminTab").classList.add("active");
         if (searchInputEl) searchInputEl.placeholder = "Search directory...";
@@ -1663,6 +2029,7 @@
     function renderAllViews() {
       renderAdvocates();
       renderClerks();
+      renderDocs();
       updateBadges();
     }
 
@@ -2299,6 +2666,708 @@
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+    }
+
+    // PDF DOCUMENTS SECTION & CLIENT-SIDE PDF 1.4 GENERATOR
+    function formatPdfByteSize(bytes) {
+      if (bytes < 1024) return bytes + " B";
+      if (bytes < 1024 * 1024) return Math.max(1, Math.round(bytes / 1024)) + " KB";
+      return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+    }
+
+    function openAddPdfModal() {
+      if (!isAdmin) {
+        showToast("Admin mode required to add PDF documents.");
+        return;
+      }
+      pendingCustomPdfPayload = null;
+      document.getElementById("pdfAddFileInput").value = "";
+      document.getElementById("pdfSelectedFileStatus").style.display = "none";
+      document.getElementById("pdfSelectedFileStatus").textContent = "";
+      document.getElementById("pdfAddTitle").value = "";
+      document.getElementById("pdfAddCategory").value = "Court Forms";
+      document.getElementById("pdfAddDesc").value = "";
+      document.getElementById("pdfAddErrorMsg").style.display = "none";
+      document.getElementById("pdfAddModal").classList.add("open");
+    }
+
+    window.closeAddPdfModal = function() {
+      document.getElementById("pdfAddModal").classList.remove("open");
+      pendingCustomPdfPayload = null;
+    };
+
+    function arrayBufferToBase64(buffer) {
+      const bytes = new Uint8Array(buffer);
+      let binary = "";
+      const chunkSize = 0x8000;
+      for (let i = 0; i < bytes.length; i += chunkSize) {
+        binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunkSize));
+      }
+      return btoa(binary);
+    }
+
+    function base64ToUint8Array(base64) {
+      const binary = atob(base64);
+      const bytes = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i++) {
+        bytes[i] = binary.charCodeAt(i);
+      }
+      return bytes;
+    }
+
+    function handlePdfFileSelected(e) {
+      const file = e.target.files[0];
+      const errEl = document.getElementById("pdfAddErrorMsg");
+      const statusEl = document.getElementById("pdfSelectedFileStatus");
+      errEl.style.display = "none";
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (evt) => {
+        const buffer = evt.target.result;
+        const headBytes = new Uint8Array(buffer.slice(0, 5));
+        const headStr = String.fromCharCode.apply(null, headBytes);
+        if (!headStr.startsWith("%PDF-")) {
+          errEl.textContent = "Please select a valid PDF document (.pdf).";
+          errEl.style.display = "block";
+          pendingCustomPdfPayload = null;
+          statusEl.style.display = "none";
+          return;
+        }
+        const base64 = arrayBufferToBase64(buffer);
+        pendingCustomPdfPayload = {
+          fileName: file.name || "document.pdf",
+          sizeBytes: file.size || buffer.byteLength,
+          base64Data: base64
+        };
+        statusEl.textContent = "Selected: " + pendingCustomPdfPayload.fileName + " (" + formatPdfByteSize(pendingCustomPdfPayload.sizeBytes) + ")";
+        statusEl.style.display = "block";
+        const titleInput = document.getElementById("pdfAddTitle");
+        if (!titleInput.value.trim()) {
+          titleInput.value = pendingCustomPdfPayload.fileName.replace(/\.pdf$/i, "").replace(/[_-]+/g, " ").trim();
+        }
+      };
+      reader.readAsArrayBuffer(file);
+    }
+
+    function saveCustomPdfRecord() {
+      if (!isAdmin) {
+        showToast("Admin mode required to add PDF documents.");
+        return;
+      }
+      const errEl = document.getElementById("pdfAddErrorMsg");
+      const title = document.getElementById("pdfAddTitle").value.trim();
+      const category = document.getElementById("pdfAddCategory").value.trim() || "Custom";
+      const description = document.getElementById("pdfAddDesc").value.trim();
+
+      if (!pendingCustomPdfPayload) {
+        errEl.textContent = "Please choose a PDF file first.";
+        errEl.style.display = "block";
+        return;
+      }
+      if (!title) {
+        errEl.textContent = "Please enter a document title.";
+        errEl.style.display = "block";
+        return;
+      }
+
+      const newDoc = {
+        id: "custom_" + Date.now() + "_" + Math.random().toString(36).slice(2, 7),
+        title: title,
+        description: description || ("Uploaded PDF document (" + pendingCustomPdfPayload.fileName + ")"),
+        category: category,
+        fileName: pendingCustomPdfPayload.fileName,
+        sizeBytes: pendingCustomPdfPayload.sizeBytes,
+        base64Data: pendingCustomPdfPayload.base64Data,
+        isCustom: true
+      };
+
+      customPdfDocs.unshift(newDoc);
+      try {
+        saveCustomPdfDocs();
+      } catch (storageErr) {
+        customPdfDocs.shift();
+        errEl.textContent = "File is too large for browser storage. Please use a smaller PDF (under 3 MB).";
+        errEl.style.display = "block";
+        return;
+      }
+
+      closeAddPdfModal();
+      renderDocs();
+      showToast("Added PDF: " + newDoc.title);
+    }
+
+    window.deletePdfDocument = function(docId) {
+      if (!isAdmin) {
+        showToast("Admin mode required to delete PDF documents.");
+        return;
+      }
+      const docs = getPdfDocumentsCatalog();
+      const target = docs.find(d => d.id === docId);
+      if (!target) return;
+
+      const promptMsg = target.isCustom
+        ? ('Permanently delete "' + target.title + '"?')
+        : ('Remove "' + target.title + '" from PDF Docs? You can restore built-in PDFs anytime.');
+      if (!confirm(promptMsg)) return;
+
+      if (target.isCustom) {
+        customPdfDocs = customPdfDocs.filter(d => d.id !== docId);
+        saveCustomPdfDocs();
+      } else {
+        if (!hiddenBuiltInPdfIds.includes(docId)) {
+          hiddenBuiltInPdfIds.push(docId);
+          saveHiddenBuiltInPdfIds();
+        }
+      }
+      syncAdminRoleUI();
+      renderDocs();
+      showToast("Deleted PDF: " + target.title);
+    };
+
+    function restoreDefaultPdfDocuments() {
+      if (!isAdmin) {
+        showToast("Admin mode required to restore default PDFs.");
+        return;
+      }
+      hiddenBuiltInPdfIds = [];
+      saveHiddenBuiltInPdfIds();
+      syncAdminRoleUI();
+      renderDocs();
+      showToast("Restored built-in PDF documents");
+    }
+
+    function getPdfDocumentsCatalog() {
+      const totalAdvs = directory.advocates.length;
+      const totalClerks = directory.clerks.length;
+      const panelCount = directory.advocates.filter(a => (a.panel || "").trim().length > 0).length;
+      const multiClerkCount = directory.advocates.filter(a => a.clerkIds && a.clerkIds.length >= 2).length;
+      const hasSearch = searchQuery.trim().length > 0;
+      const filteredAdvs = getFilteredAdvocates();
+      const unassignedCount = directory.advocates.filter(a => !a.clerkIds || a.clerkIds.length === 0).length;
+      const estPages = (n, per) => Math.max(1, Math.ceil(n / per));
+
+      const customEntries = customPdfDocs.map(rec => ({
+        id: rec.id,
+        title: rec.title,
+        description: rec.description,
+        category: rec.category || "Custom",
+        fileName: rec.fileName,
+        formatLabel: "PDF • Uploaded",
+        metaSummary: formatPdfByteSize(rec.sizeBytes || 0) + " • Admin Added",
+        base64Data: rec.base64Data,
+        isCustom: true,
+        recordCount: 1,
+        estimatedPages: 1
+      }));
+
+      const builtIns = [
+        {
+          id: "appearance_note",
+          title: "Appearance Note (High Court of Gujarat)",
+          description: "Official High Court of Gujarat Appearance Note form addressed to The Registrar for advocate appearance / VP filing.",
+          category: "Court Forms",
+          fileName: "APPEARANCE_NOTE.pdf",
+          formatLabel: "PDF • Form",
+          metaSummary: "1 Page • Official Form",
+          assetUrls: [
+            "./assets/aistudio/APPEARANCE_NOTE_8e57f286.pdf",
+            "./public/assets/aistudio/APPEARANCE_NOTE_8e57f286.pdf"
+          ],
+          recordCount: 1,
+          estimatedPages: 1
+        },
+        {
+          id: "full_directory",
+          title: "Complete Advocate & Clerk Directory",
+          description: "Full printable register of all High Court advocates with Bar codes, mobile numbers, and assigned clerks.",
+          category: "Full Register",
+          fileName: "Gujarat_HC_Full_Directory.pdf",
+          recordCount: totalAdvs,
+          estimatedPages: estPages(totalAdvs, 22)
+        },
+        {
+          id: "panel_advocates",
+          title: "Panel & Empaneled Advocates List",
+          description: "Dedicated register of advocates empaneled with Banks, LIC, Corporations, Govt. & Electricity Boards.",
+          category: "Empanelment",
+          fileName: "Panel_Advocates_Directory.pdf",
+          recordCount: panelCount,
+          estimatedPages: estPages(panelCount, 18)
+        },
+        {
+          id: "clerks_register",
+          title: "Advocate Clerks Contact Register",
+          description: "Alphabetical directory of court clerks with primary & secondary phone numbers and linked advocates.",
+          category: "Clerks Register",
+          fileName: "Advocate_Clerks_Register.pdf",
+          recordCount: totalClerks,
+          estimatedPages: estPages(totalClerks, 22)
+        },
+        {
+          id: "code_index",
+          title: "Advocate Code Quick Lookup Index",
+          description: "Compact code-sorted filing desk reference mapping High Court Bar codes to Advocate & Clerk names.",
+          category: "Quick Reference",
+          fileName: "Advocate_Code_Index.pdf",
+          recordCount: totalAdvs,
+          estimatedPages: estPages(totalAdvs, 32)
+        },
+        {
+          id: "multi_clerk",
+          title: "Dual & Multi-Clerk Assignments",
+          description: "Summary sheet of advocates supported by Clerk 1 & Clerk 2 along with both clerks' mobile contacts.",
+          category: "Assignments",
+          fileName: "Multi_Clerk_Assignments.pdf",
+          recordCount: multiClerkCount,
+          estimatedPages: estPages(multiClerkCount, 22)
+        },
+        {
+          id: "filtered_export",
+          title: hasSearch ? 'Search Results: "' + searchQuery.trim().slice(0, 24) + '"' : "Advocates Without Assigned Clerk",
+          description: hasSearch
+            ? "Custom PDF export containing the advocates currently matching your active search query."
+            : "Directory audit list of advocates who currently do not have a court clerk assigned.",
+          category: hasSearch ? "Search Export" : "Audit List",
+          fileName: hasSearch ? "Filtered_Directory_Export.pdf" : "Unassigned_Advocates_List.pdf",
+          recordCount: hasSearch ? filteredAdvs.length : unassignedCount,
+          estimatedPages: estPages(hasSearch ? filteredAdvs.length : unassignedCount, 24)
+        }
+      ].filter(d => !hiddenBuiltInPdfIds.includes(d.id));
+
+      return customEntries.concat(builtIns);
+    }
+
+    function renderDocs() {
+      const grid = document.getElementById("docsCardsGrid");
+      if (!grid) return;
+
+      const docs = getPdfDocumentsCatalog();
+      const categories = ["All"].concat(Array.from(new Set(docs.map(d => d.category))));
+      if (!categories.includes(activeDocCategory)) activeDocCategory = "All";
+
+      const chipsRow = document.getElementById("docsCategoryChipsRow");
+      if (chipsRow) {
+        chipsRow.innerHTML = categories.map(cat => `
+          <div class="filter-pill ${activeDocCategory === cat ? "active" : ""}" data-doc-cat="${escapeHtml(cat)}">${cat === "All" ? "All Documents" : escapeHtml(cat)}</div>
+        `).join("");
+      }
+
+      const restoreBtn = document.getElementById("btnAdminRestorePdfs");
+      if (restoreBtn) {
+        restoreBtn.style.display = (isAdmin && hiddenBuiltInPdfIds.length > 0) ? "inline-flex" : "none";
+      }
+
+      const q = searchQuery.trim().toLowerCase();
+      const filtered = docs.filter(d => {
+        const catOk = activeDocCategory === "All" || d.category === activeDocCategory;
+        const qOk = !q ||
+          d.title.toLowerCase().includes(q) ||
+          d.description.toLowerCase().includes(q) ||
+          d.category.toLowerCase().includes(q) ||
+          d.fileName.toLowerCase().includes(q);
+        return catOk && qOk;
+      });
+
+      const navBadge = document.getElementById("bottomNavDocsCount");
+      if (navBadge) navBadge.textContent = docs.length;
+
+      if (currentTab === "docs") {
+        document.getElementById("resultsCountNotice").textContent = "Showing " + filtered.length + " of " + docs.length + " PDF Documents";
+      }
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 36px 20px; color: var(--text-secondary);">No matching PDF documents found.</div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(doc => `
+        <article class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-pdf-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span>PDF</span>
+            </div>
+            <div style="flex:1; min-width:0;">
+              <div class="doc-badges-row">
+                <span class="doc-category-pill">${escapeHtml(doc.category)}</span>
+                <span class="doc-format-pill">${escapeHtml(doc.formatLabel || "PDF • A4")}</span>
+              </div>
+              <div class="doc-title">${escapeHtml(doc.title)}</div>
+            </div>
+            ${isAdmin ? `
+              <button class="btn-doc-delete" onclick="deletePdfDocument('${escapeHtml(doc.id)}')" title="Delete PDF Document" aria-label="Delete PDF Document">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              </button>
+            ` : ""}
+          </div>
+          <p class="doc-desc">${escapeHtml(doc.description)}</p>
+          <div class="doc-meta-strip">
+            <span class="doc-filename">${escapeHtml(doc.fileName)}</span>
+            <span class="doc-count-meta">${escapeHtml(doc.metaSummary || (doc.recordCount.toLocaleString() + " records • ~" + doc.estimatedPages + " pg"))}</span>
+          </div>
+          <button class="btn-download-pdf" onclick="downloadDocumentPdf('${escapeHtml(doc.id)}', this)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            <span>Download PDF</span>
+          </button>
+        </article>
+      `).join("");
+    }
+
+    window.downloadDocumentPdf = async function(docId, btnEl) {
+      const docs = getPdfDocumentsCatalog();
+      const doc = docs.find(d => d.id === docId);
+      if (!doc) return;
+
+      const origHtml = btnEl ? btnEl.innerHTML : "";
+      if (btnEl) {
+        btnEl.disabled = true;
+        btnEl.innerHTML = '<span>Downloading PDF…</span>';
+      }
+
+      if (doc.isCustom && doc.base64Data) {
+        try {
+          const bytes = base64ToUint8Array(doc.base64Data);
+          downloadBlobFile(new Blob([bytes], { type: "application/pdf" }), doc.fileName);
+          showToast("Downloaded " + doc.fileName);
+        } catch (err) {
+          showToast("Download failed: " + err.message);
+        } finally {
+          if (btnEl) {
+            btnEl.disabled = false;
+            btnEl.innerHTML = origHtml;
+          }
+        }
+        return;
+      }
+
+      if (doc.assetUrls && doc.assetUrls.length > 0) {
+        try {
+          let blob = null;
+          for (const url of doc.assetUrls) {
+            try {
+              const resp = await fetch(url);
+              if (resp.ok) {
+                blob = await resp.blob();
+                break;
+              }
+            } catch (_) {}
+          }
+          if (blob) {
+            downloadBlobFile(new Blob([blob], { type: "application/pdf" }), doc.fileName);
+            showToast("Downloaded " + doc.fileName);
+          } else {
+            const a = document.createElement("a");
+            a.href = doc.assetUrls[0];
+            a.download = doc.fileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            showToast("Downloading " + doc.fileName);
+          }
+        } catch (err) {
+          showToast("Download failed: " + err.message);
+        } finally {
+          if (btnEl) {
+            btnEl.disabled = false;
+            btnEl.innerHTML = origHtml;
+          }
+        }
+        return;
+      }
+
+      setTimeout(() => {
+        try {
+          const clerkMap = new Map(directory.clerks.map(c => [c.id, c]));
+          const resolveClerkList = (adv) => (adv.clerkIds || []).map(id => clerkMap.get(id)).filter(Boolean);
+          let title = doc.title;
+          let subtitle = "";
+          let columns = [];
+          let rows = [];
+
+          if (docId === "full_directory") {
+            columns = [
+              { label: "Sr", w: 30 },
+              { label: "Code", w: 46 },
+              { label: "Advocate Name & Mobile", w: 195 },
+              { label: "Assigned Clerk(s)", w: 170 },
+              { label: "Panel", w: 90 }
+            ];
+            rows = directory.advocates.map((a, idx) => {
+              const mobs = [a.primaryMobile, a.secondaryMobile].filter(Boolean).join(" / ");
+              const clerks = resolveClerkList(a).map(c => {
+                const cm = [c.primaryMobile, c.secondaryMobile].filter(Boolean).join(", ");
+                return cm ? c.name + " (" + cm + ")" : c.name;
+              }).join("; ") || "-";
+              return [
+                String(a.srNo || (idx + 1)),
+                a.code || "-",
+                mobs ? a.name + " (" + mobs + ")" : a.name,
+                clerks,
+                (a.panel || "").replace(/\n+/g, "; ") || "-"
+              ];
+            });
+            subtitle = "All Registered High Court Advocates (" + rows.length + " Records)";
+          } else if (docId === "panel_advocates") {
+            columns = [
+              { label: "Sr", w: 30 },
+              { label: "Code", w: 46 },
+              { label: "Advocate Name", w: 155 },
+              { label: "Empaneled Organizations", w: 180 },
+              { label: "Clerk & Mobile", w: 120 }
+            ];
+            const panelAdvs = directory.advocates.filter(a => (a.panel || "").trim().length > 0);
+            rows = panelAdvs.map((a, idx) => {
+              const clerks = resolveClerkList(a).map(c => {
+                const cm = c.primaryMobile || c.secondaryMobile || "";
+                return cm ? c.name + " (" + cm + ")" : c.name;
+              }).join("; ") || "-";
+              return [String(idx + 1), a.code || "-", a.name, (a.panel || "").replace(/\n+/g, "; "), clerks];
+            });
+            subtitle = "Banks, Insurance, Govt. & Statutory Panels (" + rows.length + " Advocates)";
+          } else if (docId === "clerks_register") {
+            columns = [
+              { label: "Sr", w: 30 },
+              { label: "Clerk Name", w: 155 },
+              { label: "Mobile Number(s)", w: 135 },
+              { label: "Linked Advocates", w: 211 }
+            ];
+            rows = directory.clerks.map((c, idx) => {
+              const mobs = [c.primaryMobile, c.secondaryMobile].filter(Boolean).join(", ") || "-";
+              const linked = directory.advocates
+                .filter(a => (a.clerkIds || []).includes(c.id))
+                .map(a => a.code ? a.name + " (" + a.code + ")" : a.name)
+                .join(", ") || "-";
+              return [String(idx + 1), c.name, mobs, linked];
+            });
+            subtitle = "Registered High Court Clerks (" + rows.length + " Clerks)";
+          } else if (docId === "code_index") {
+            columns = [
+              { label: "Code", w: 54 },
+              { label: "Advocate Name", w: 220 },
+              { label: "Advocate Mobile", w: 102 },
+              { label: "Primary Clerk", w: 155 }
+            ];
+            const sorted = [...directory.advocates].sort((a, b) => {
+              const na = parseInt(a.code, 10);
+              const nb = parseInt(b.code, 10);
+              if (!isNaN(na) && !isNaN(nb) && na !== nb) return na - nb;
+              return String(a.code || "").localeCompare(String(b.code || "")) || String(a.name || "").localeCompare(String(b.name || ""));
+            });
+            rows = sorted.map(a => {
+              const mobs = [a.primaryMobile, a.secondaryMobile].filter(Boolean).join(", ") || "-";
+              const c = resolveClerkList(a)[0];
+              const cTxt = c ? (c.primaryMobile ? c.name + " (" + c.primaryMobile + ")" : c.name) : "-";
+              return [a.code || "-", a.name, mobs, cTxt];
+            });
+            subtitle = "Sorted by Bar Code (" + rows.length + " Advocates)";
+          } else if (docId === "multi_clerk") {
+            columns = [
+              { label: "Sr", w: 30 },
+              { label: "Code", w: 46 },
+              { label: "Advocate Name", w: 170 },
+              { label: "Clerk 1 & Contact", w: 142 },
+              { label: "Clerk 2 & Contact", w: 143 }
+            ];
+            const multi = directory.advocates.filter(a => a.clerkIds && a.clerkIds.length >= 2);
+            rows = multi.map((a, idx) => {
+              const cs = resolveClerkList(a);
+              const fmt = (c) => c ? (c.primaryMobile ? c.name + " (" + c.primaryMobile + ")" : c.name) : "-";
+              return [String(idx + 1), a.code || "-", a.name, fmt(cs[0]), fmt(cs[1])];
+            });
+            subtitle = "Advocates with 2+ Assigned Clerks (" + rows.length + " Advocates)";
+          } else {
+            const hasSearch = searchQuery.trim().length > 0;
+            const list = hasSearch
+              ? getFilteredAdvocates()
+              : directory.advocates.filter(a => !a.clerkIds || a.clerkIds.length === 0);
+            columns = [
+              { label: "Sr", w: 30 },
+              { label: "Code", w: 46 },
+              { label: "Advocate Name", w: 190 },
+              { label: "Mobile Number(s)", w: 115 },
+              { label: hasSearch ? "Clerk / Panel" : "Panel", w: 150 }
+            ];
+            rows = list.map((a, idx) => {
+              const mobs = [a.primaryMobile, a.secondaryMobile].filter(Boolean).join(", ") || "-";
+              const clerks = resolveClerkList(a).map(c => c.name).join(", ");
+              const panels = (a.panel || "").replace(/\n+/g, ", ");
+              const extra = hasSearch ? [clerks, panels].filter(Boolean).join("; ") || "-" : (panels || "-");
+              return [String(idx + 1), a.code || "-", a.name, mobs, extra];
+            });
+            title = hasSearch ? "Search Results Export" : "Advocates Without Assigned Clerk";
+            subtitle = hasSearch ? 'Query: "' + searchQuery.trim() + '" (' + rows.length + " Matches)" : "Unassigned Advocates (" + rows.length + " Records)";
+          }
+
+          const pdfBlob = buildPdfDocumentBlob(title, subtitle, columns, rows);
+          downloadBlobFile(pdfBlob, doc.fileName);
+          showToast("Downloaded " + doc.fileName);
+        } catch (err) {
+          showToast("PDF generation failed: " + err.message);
+        } finally {
+          if (btnEl) {
+            btnEl.disabled = false;
+            btnEl.innerHTML = origHtml;
+          }
+        }
+      }, 20);
+    };
+
+    function sanitizePdfText(str) {
+      return String(str || "")
+        .replace(/[^\x20-\x7E]/g, " ")
+        .replace(/\\/g, "\\\\")
+        .replace(/\(/g, "\\(")
+        .replace(/\)/g, "\\)");
+    }
+
+    function wrapPdfCell(text, maxChars) {
+      const clean = String(text || "-").replace(/\s+/g, " ").trim() || "-";
+      const lines = [];
+      let rem = clean;
+      while (rem.length > maxChars && lines.length < 2) {
+        let cut = rem.lastIndexOf(" ", maxChars);
+        if (cut <= 0) cut = maxChars;
+        lines.push(rem.slice(0, cut).trim());
+        rem = rem.slice(cut).trim();
+      }
+      if (rem.length > 0) {
+        lines.push(rem.length > maxChars ? rem.slice(0, Math.max(1, maxChars - 3)) + "..." : rem);
+      }
+      return lines.length ? lines : ["-"];
+    }
+
+    function buildPdfDocumentBlob(title, subtitle, columns, rows) {
+      const pageW = 595;
+      const pageH = 842;
+      const marginL = 32;
+      const marginR = 563;
+      const generatedAt = new Date().toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
+
+      const pagesStreams = [];
+      let cmds = [];
+      let pageNum = 1;
+
+      const startNewPage = (isFirst) => {
+        cmds = [];
+        cmds.push("0.118 0.227 0.541 rg 0 794 595 48 re f");
+        cmds.push("0.851 0.467 0.024 rg 0 791 595 3 re f");
+        cmds.push("BT /F2 12 Tf 1 1 1 rg 32 818 Td (" + sanitizePdfText("ADV & CLERK DIRECTORY - GUJARAT HIGH COURT") + ") Tj ET");
+        cmds.push("BT /F1 8.5 Tf 0.859 0.918 0.996 rg 32 804 Td (" + sanitizePdfText("Official Register | Generated " + generatedAt) + ") Tj ET");
+
+        let yTop = 774;
+        if (isFirst) {
+          cmds.push("BT /F2 11.5 Tf 0.059 0.090 0.165 rg 32 " + yTop + " Td (" + sanitizePdfText(title) + ") Tj ET");
+          yTop -= 13;
+          cmds.push("BT /F1 8.5 Tf 0.278 0.333 0.412 rg 32 " + yTop + " Td (" + sanitizePdfText(subtitle) + ") Tj ET");
+          yTop -= 14;
+        } else {
+          cmds.push("BT /F1 8.5 Tf 0.278 0.333 0.412 rg 32 " + yTop + " Td (" + sanitizePdfText(title + " (Continued)") + ") Tj ET");
+          yTop -= 10;
+        }
+
+        const hdrH = 18;
+        const hdrBot = yTop - hdrH;
+        cmds.push("0.859 0.918 0.996 rg " + marginL + " " + hdrBot + " " + (marginR - marginL) + " " + hdrH + " re f");
+        cmds.push("0.796 0.835 0.882 RG 0.6 w " + marginL + " " + hdrBot + " " + (marginR - marginL) + " " + hdrH + " re S");
+        let cx = marginL;
+        columns.forEach(col => {
+          cmds.push("BT /F2 8 Tf 0.118 0.227 0.541 rg " + (cx + 4) + " " + (hdrBot + 5.5) + " Td (" + sanitizePdfText(col.label) + ") Tj ET");
+          cx += col.w;
+        });
+        return hdrBot;
+      };
+
+      const finishPage = () => {
+        cmds.push("0.796 0.835 0.882 RG 0.6 w 32 36 m 563 36 l S");
+        cmds.push("BT /F1 8 Tf 0.392 0.455 0.545 rg 32 24 Td (" + sanitizePdfText("Adv & Clerk Directory | Print-Ready A4 PDF") + ") Tj ET");
+        cmds.push("BT /F1 8 Tf 0.392 0.455 0.545 rg 525 24 Td (" + sanitizePdfText("Page " + pageNum) + ") Tj ET");
+        pagesStreams.push(cmds.join("\n"));
+      };
+
+      let cursorY = startNewPage(true);
+
+      if (rows.length === 0) {
+        cmds.push("BT /F1 9 Tf 0.278 0.333 0.412 rg 38 " + (cursorY - 22) + " Td (No matching records available for this document.) Tj ET");
+      } else {
+        rows.forEach((row, rIdx) => {
+          const wrapped = columns.map((col, cIdx) => {
+            const maxChars = Math.max(4, Math.floor((col.w - 8) / 4.3));
+            return wrapPdfCell(row[cIdx], maxChars);
+          });
+          const maxLines = Math.max(1, ...wrapped.map(w => w.length));
+          const rowH = Math.max(16, maxLines * 10 + 6);
+
+          if (cursorY - rowH < 48) {
+            finishPage();
+            pageNum++;
+            cursorY = startNewPage(false);
+          }
+
+          const rowBot = cursorY - rowH;
+          if (rIdx % 2 === 1) {
+            cmds.push("0.973 0.980 0.988 rg " + marginL + " " + rowBot + " " + (marginR - marginL) + " " + rowH + " re f");
+          }
+          cmds.push("0.886 0.910 0.941 RG 0.5 w " + marginL + " " + rowBot + " " + (marginR - marginL) + " " + rowH + " re S");
+
+          let cx = marginL;
+          columns.forEach((col, cIdx) => {
+            const lines = wrapped[cIdx];
+            let ty = cursorY - 11;
+            lines.forEach(line => {
+              cmds.push("BT /F1 7.6 Tf 0.059 0.090 0.165 rg " + (cx + 4) + " " + ty + " Td (" + sanitizePdfText(line) + ") Tj ET");
+              ty -= 10;
+            });
+            cx += col.w;
+          });
+          cursorY = rowBot;
+        });
+      }
+
+      finishPage();
+
+      // Assemble valid PDF 1.4 objects
+      const objects = [];
+      const addObj = (body) => {
+        objects.push(body);
+        return objects.length;
+      };
+
+      const catalogId = addObj("");
+      const pagesId = addObj("");
+      const fontRegularId = addObj("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>");
+      const fontBoldId = addObj("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>");
+
+      const pageIds = [];
+      pagesStreams.forEach(streamStr => {
+        const contentId = addObj("<< /Length " + streamStr.length + " >>\nstream\n" + streamStr + "\nendstream");
+        const pageId = addObj(
+          "<< /Type /Page /Parent " + pagesId + " 0 R /MediaBox [0 0 " + pageW + " " + pageH + "] " +
+          "/Resources << /Font << /F1 " + fontRegularId + " 0 R /F2 " + fontBoldId + " 0 R >> >> " +
+          "/Contents " + contentId + " 0 R >>"
+        );
+        pageIds.push(pageId);
+      });
+
+      objects[catalogId - 1] = "<< /Type /Catalog /Pages " + pagesId + " 0 R >>";
+      objects[pagesId - 1] = "<< /Type /Pages /Kids [" + pageIds.map(id => id + " 0 R").join(" ") + "] /Count " + pageIds.length + " >>";
+
+      let pdf = "%PDF-1.4\n";
+      const offsets = [0];
+      objects.forEach((obj, i) => {
+        offsets.push(pdf.length);
+        pdf += (i + 1) + " 0 obj\n" + obj + "\nendobj\n";
+      });
+
+      const xrefPos = pdf.length;
+      pdf += "xref\n0 " + (objects.length + 1) + "\n";
+      pdf += "0000000000 65535 f \n";
+      for (let i = 1; i <= objects.length; i++) {
+        pdf += String(offsets[i]).padStart(10, "0") + " 00000 n \n";
+      }
+      pdf += "trailer\n<< /Size " + (objects.length + 1) + " /Root " + catalogId + " 0 R >>\nstartxref\n" + xrefPos + "\n%%EOF";
+
+      return new Blob([pdf], { type: "application/pdf" });
     }
 
     // Admin CSV Import
