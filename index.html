@@ -2877,62 +2877,7 @@
           recordCount: 1,
           estimatedPages: 1
         },
-        {
-          id: "full_directory",
-          title: "Complete Advocate & Clerk Directory",
-          description: "Full printable register of all High Court advocates with Bar codes, mobile numbers, and assigned clerks.",
-          category: "Full Register",
-          fileName: "Gujarat_HC_Full_Directory.pdf",
-          recordCount: totalAdvs,
-          estimatedPages: estPages(totalAdvs, 22)
-        },
-        {
-          id: "panel_advocates",
-          title: "Panel & Empaneled Advocates List",
-          description: "Dedicated register of advocates empaneled with Banks, LIC, Corporations, Govt. & Electricity Boards.",
-          category: "Empanelment",
-          fileName: "Panel_Advocates_Directory.pdf",
-          recordCount: panelCount,
-          estimatedPages: estPages(panelCount, 18)
-        },
-        {
-          id: "clerks_register",
-          title: "Advocate Clerks Contact Register",
-          description: "Alphabetical directory of court clerks with primary & secondary phone numbers and linked advocates.",
-          category: "Clerks Register",
-          fileName: "Advocate_Clerks_Register.pdf",
-          recordCount: totalClerks,
-          estimatedPages: estPages(totalClerks, 22)
-        },
-        {
-          id: "code_index",
-          title: "Advocate Code Quick Lookup Index",
-          description: "Compact code-sorted filing desk reference mapping High Court Bar codes to Advocate & Clerk names.",
-          category: "Quick Reference",
-          fileName: "Advocate_Code_Index.pdf",
-          recordCount: totalAdvs,
-          estimatedPages: estPages(totalAdvs, 32)
-        },
-        {
-          id: "multi_clerk",
-          title: "Dual & Multi-Clerk Assignments",
-          description: "Summary sheet of advocates supported by Clerk 1 & Clerk 2 along with both clerks' mobile contacts.",
-          category: "Assignments",
-          fileName: "Multi_Clerk_Assignments.pdf",
-          recordCount: multiClerkCount,
-          estimatedPages: estPages(multiClerkCount, 22)
-        },
-        {
-          id: "filtered_export",
-          title: hasSearch ? 'Search Results: "' + searchQuery.trim().slice(0, 24) + '"' : "Advocates Without Assigned Clerk",
-          description: hasSearch
-            ? "Custom PDF export containing the advocates currently matching your active search query."
-            : "Directory audit list of advocates who currently do not have a court clerk assigned.",
-          category: hasSearch ? "Search Export" : "Audit List",
-          fileName: hasSearch ? "Filtered_Directory_Export.pdf" : "Unassigned_Advocates_List.pdf",
-          recordCount: hasSearch ? filteredAdvs.length : unassignedCount,
-          estimatedPages: estPages(hasSearch ? filteredAdvs.length : unassignedCount, 24)
-        }
+        
       ].filter(d => !hiddenBuiltInPdfIds.includes(d.id));
 
       return customEntries.concat(builtIns);
