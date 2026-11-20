@@ -1002,12 +1002,12 @@
     .docs-hero-card {
       background: linear-gradient(135deg, var(--primary-container) 0%, var(--surface) 100%);
       border: 1px solid var(--outline);
-      border-radius: var(--radius-lg);
-      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
       display: flex;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 12px;
+      gap: 10px;
+      margin-bottom: 10px;
       box-shadow: var(--shadow-card);
     }
 
@@ -1016,40 +1016,56 @@
     }
 
     .docs-hero-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-md);
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
       background: var(--primary);
       color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.22);
+    }
+
+    .docs-hero-icon svg {
+      width: 18px;
+      height: 18px;
     }
 
     .docs-hero-info h2 {
-      font-size: 1.05rem;
+      font-size: 0.92rem;
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
 
     .docs-hero-info p {
-      font-size: 0.8rem;
+      font-size: 0.74rem;
       color: var(--text-secondary);
-      line-height: 1.4;
+      line-height: 1.3;
+    }
+
+    #docsCardsGrid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 10px;
+    }
+
+    @media (max-width: 560px) {
+      #docsCardsGrid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .doc-card {
       background: var(--surface);
       border: 1px solid var(--outline);
-      border-radius: var(--radius-lg);
-      padding: 16px;
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
       box-shadow: var(--shadow-card);
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 7px;
       transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     }
 
@@ -1060,14 +1076,14 @@
 
     .doc-card-head {
       display: flex;
-      align-items: flex-start;
-      gap: 12px;
+      align-items: center;
+      gap: 9px;
     }
 
     .doc-pdf-badge {
-      width: 46px;
-      height: 46px;
-      border-radius: var(--radius-md);
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-sm);
       background: #fee2e2;
       color: #dc2626;
       display: flex;
@@ -1075,9 +1091,16 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      font-size: 0.65rem;
+      font-size: 0.52rem;
       font-weight: 800;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
+      line-height: 1;
+    }
+
+    .doc-pdf-badge svg {
+      width: 15px;
+      height: 15px;
+      margin-bottom: 1px;
     }
 
     [data-theme="dark"] .doc-pdf-badge {
@@ -1088,17 +1111,17 @@
     .doc-badges-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 5px;
+      gap: 4px;
+      margin-bottom: 3px;
     }
 
     .doc-category-pill {
       background: var(--primary-container);
       color: var(--primary);
-      font-size: 0.7rem;
+      font-size: 0.64rem;
       font-weight: 700;
-      padding: 2px 8px;
-      border-radius: var(--radius-sm);
+      padding: 1px 6px;
+      border-radius: 4px;
     }
 
     [data-theme="dark"] .doc-category-pill {
@@ -1109,35 +1132,39 @@
       background: var(--surface-variant);
       color: var(--text-secondary);
       border: 1px solid var(--outline);
-      font-size: 0.7rem;
+      font-size: 0.64rem;
       font-weight: 600;
-      padding: 2px 7px;
-      border-radius: var(--radius-sm);
+      padding: 1px 5px;
+      border-radius: 4px;
     }
 
     .doc-title {
-      font-size: 1rem;
+      font-size: 0.88rem;
       font-weight: 700;
       color: var(--text-primary);
-      line-height: 1.3;
+      line-height: 1.25;
     }
 
     .doc-desc {
-      font-size: 0.82rem;
+      font-size: 0.74rem;
       color: var(--text-secondary);
-      line-height: 1.45;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .doc-meta-strip {
       background: var(--surface-variant);
       border: 1px solid var(--outline);
       border-radius: var(--radius-sm);
-      padding: 8px 10px;
+      padding: 5px 8px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
-      font-size: 0.74rem;
+      gap: 6px;
+      font-size: 0.68rem;
     }
 
     .doc-filename {
@@ -1160,22 +1187,27 @@
 
     .btn-download-pdf {
       width: 100%;
-      min-height: 44px;
-      padding: 10px 16px;
+      min-height: 34px;
+      padding: 6px 12px;
       border: none;
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-sm);
       background: var(--primary);
       color: #ffffff;
       font-family: inherit;
-      font-size: 0.88rem;
+      font-size: 0.8rem;
       font-weight: 700;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.25);
+      gap: 6px;
+      box-shadow: 0 2px 6px rgba(30, 58, 138, 0.22);
       transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .btn-download-pdf svg {
+      width: 15px;
+      height: 15px;
     }
 
     .btn-download-pdf:active {
@@ -1191,7 +1223,7 @@
       display: none;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       align-items: center;
     }
 
@@ -1200,9 +1232,9 @@
     }
 
     .btn-doc-delete {
-      min-width: 40px;
-      min-height: 40px;
-      border-radius: var(--radius-md);
+      min-width: 32px;
+      min-height: 32px;
+      border-radius: var(--radius-sm);
       border: 1px solid #fecaca;
       background: #fef2f2;
       color: var(--danger);
@@ -1338,14 +1370,7 @@
         <button class="btn-modal-cancel" id="btnAdminRestorePdfs" style="display: none; min-height: 44px;">Restore Default PDFs</button>
       </div>
 
-      <div class="filter-chips-scroll" id="docsCategoryChipsRow" style="margin-bottom: 10px;">
-        <div class="filter-pill active" data-doc-cat="All">All Documents</div>
-        <div class="filter-pill" data-doc-cat="Court Forms">Court Forms</div>
-        <div class="filter-pill" data-doc-cat="Full Register">Full Register</div>
-        <div class="filter-pill" data-doc-cat="Empanelment">Empanelment</div>
-        <div class="filter-pill" data-doc-cat="Clerks Register">Clerks Register</div>
-        <div class="filter-pill" data-doc-cat="Quick Reference">Quick Reference</div>
-      </div>
+      <div class="filter-chips-scroll" id="docsCategoryChipsRow" style="margin-bottom: 10px; display: none;"></div>
 
       <div class="cards-grid" id="docsCardsGrid"></div>
     </section>
@@ -1425,7 +1450,7 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
       </div>
       <span>PDF Docs</span>
-      <span class="nav-badge-dot" id="bottomNavDocsCount" style="background: #dc2626;">7</span>
+      <span class="nav-badge-dot" id="bottomNavDocsCount" style="background: #dc2626;">1</span>
     </button>
 
     <!-- Admin Tab: Shows when Admin unlocked -->
@@ -2668,7 +2693,7 @@
       URL.revokeObjectURL(url);
     }
 
-    // PDF DOCUMENTS SECTION & CLIENT-SIDE PDF 1.4 GENERATOR
+    // Admin PDF Document Upload, Save, Delete & Restore Helpers
     function formatPdfByteSize(bytes) {
       if (bytes < 1024) return bytes + " B";
       if (bytes < 1024 * 1024) return Math.max(1, Math.round(bytes / 1024)) + " KB";
@@ -2681,18 +2706,33 @@
         return;
       }
       pendingCustomPdfPayload = null;
-      document.getElementById("pdfAddFileInput").value = "";
-      document.getElementById("pdfSelectedFileStatus").style.display = "none";
-      document.getElementById("pdfSelectedFileStatus").textContent = "";
-      document.getElementById("pdfAddTitle").value = "";
-      document.getElementById("pdfAddCategory").value = "Court Forms";
-      document.getElementById("pdfAddDesc").value = "";
-      document.getElementById("pdfAddErrorMsg").style.display = "none";
-      document.getElementById("pdfAddModal").classList.add("open");
+      const fileInput = document.getElementById("pdfAddFileInput");
+      const statusEl = document.getElementById("pdfSelectedFileStatus");
+      const titleEl = document.getElementById("pdfAddTitle");
+      const categoryEl = document.getElementById("pdfAddCategory");
+      const descEl = document.getElementById("pdfAddDesc");
+      const errEl = document.getElementById("pdfAddErrorMsg");
+
+      if (fileInput) fileInput.value = "";
+      if (statusEl) {
+        statusEl.style.display = "none";
+        statusEl.textContent = "";
+      }
+      if (titleEl) titleEl.value = "";
+      if (categoryEl) categoryEl.value = "Court Forms";
+      if (descEl) descEl.value = "";
+      if (errEl) {
+        errEl.style.display = "none";
+        errEl.textContent = "";
+      }
+
+      const modal = document.getElementById("pdfAddModal");
+      if (modal) modal.classList.add("open");
     }
 
     window.closeAddPdfModal = function() {
-      document.getElementById("pdfAddModal").classList.remove("open");
+      const modal = document.getElementById("pdfAddModal");
+      if (modal) modal.classList.remove("open");
       pendingCustomPdfPayload = null;
     };
 
@@ -2719,7 +2759,7 @@
       const file = e.target.files[0];
       const errEl = document.getElementById("pdfAddErrorMsg");
       const statusEl = document.getElementById("pdfSelectedFileStatus");
-      errEl.style.display = "none";
+      if (errEl) errEl.style.display = "none";
       if (!file) return;
 
       const reader = new FileReader();
@@ -2728,10 +2768,12 @@
         const headBytes = new Uint8Array(buffer.slice(0, 5));
         const headStr = String.fromCharCode.apply(null, headBytes);
         if (!headStr.startsWith("%PDF-")) {
-          errEl.textContent = "Please select a valid PDF document (.pdf).";
-          errEl.style.display = "block";
+          if (errEl) {
+            errEl.textContent = "Please select a valid PDF document (.pdf).";
+            errEl.style.display = "block";
+          }
           pendingCustomPdfPayload = null;
-          statusEl.style.display = "none";
+          if (statusEl) statusEl.style.display = "none";
           return;
         }
         const base64 = arrayBufferToBase64(buffer);
@@ -2740,11 +2782,16 @@
           sizeBytes: file.size || buffer.byteLength,
           base64Data: base64
         };
-        statusEl.textContent = "Selected: " + pendingCustomPdfPayload.fileName + " (" + formatPdfByteSize(pendingCustomPdfPayload.sizeBytes) + ")";
-        statusEl.style.display = "block";
+        if (statusEl) {
+          statusEl.textContent = "Selected: " + pendingCustomPdfPayload.fileName + " (" + formatPdfByteSize(pendingCustomPdfPayload.sizeBytes) + ")";
+          statusEl.style.display = "block";
+        }
         const titleInput = document.getElementById("pdfAddTitle");
-        if (!titleInput.value.trim()) {
-          titleInput.value = pendingCustomPdfPayload.fileName.replace(/\.pdf$/i, "").replace(/[_-]+/g, " ").trim();
+        if (titleInput && !titleInput.value.trim()) {
+          titleInput.value = pendingCustomPdfPayload.fileName
+            .replace(/\.pdf$/i, "")
+            .replace(/[_-]+/g, " ")
+            .trim();
         }
       };
       reader.readAsArrayBuffer(file);
@@ -2756,18 +2803,22 @@
         return;
       }
       const errEl = document.getElementById("pdfAddErrorMsg");
-      const title = document.getElementById("pdfAddTitle").value.trim();
-      const category = document.getElementById("pdfAddCategory").value.trim() || "Custom";
-      const description = document.getElementById("pdfAddDesc").value.trim();
+      const title = (document.getElementById("pdfAddTitle")?.value || "").trim();
+      const category = (document.getElementById("pdfAddCategory")?.value || "").trim() || "Custom";
+      const description = (document.getElementById("pdfAddDesc")?.value || "").trim();
 
       if (!pendingCustomPdfPayload) {
-        errEl.textContent = "Please choose a PDF file first.";
-        errEl.style.display = "block";
+        if (errEl) {
+          errEl.textContent = "Please choose a PDF file first.";
+          errEl.style.display = "block";
+        }
         return;
       }
       if (!title) {
-        errEl.textContent = "Please enter a document title.";
-        errEl.style.display = "block";
+        if (errEl) {
+          errEl.textContent = "Please enter a document title.";
+          errEl.style.display = "block";
+        }
         return;
       }
 
@@ -2787,8 +2838,10 @@
         saveCustomPdfDocs();
       } catch (storageErr) {
         customPdfDocs.shift();
-        errEl.textContent = "File is too large for browser storage. Please use a smaller PDF (under 3 MB).";
-        errEl.style.display = "block";
+        if (errEl) {
+          errEl.textContent = "File is too large for browser storage. Please use a smaller PDF (under 3 MB).";
+          errEl.style.display = "block";
+        }
         return;
       }
 
@@ -2808,7 +2861,7 @@
 
       const promptMsg = target.isCustom
         ? ('Permanently delete "' + target.title + '"?')
-        : ('Remove "' + target.title + '" from PDF Docs? You can restore built-in PDFs anytime.');
+        : ('Remove "' + target.title + '" from PDF Docs?');
       if (!confirm(promptMsg)) return;
 
       if (target.isCustom) {
@@ -2838,15 +2891,6 @@
     }
 
     function getPdfDocumentsCatalog() {
-      const totalAdvs = directory.advocates.length;
-      const totalClerks = directory.clerks.length;
-      const panelCount = directory.advocates.filter(a => (a.panel || "").trim().length > 0).length;
-      const multiClerkCount = directory.advocates.filter(a => a.clerkIds && a.clerkIds.length >= 2).length;
-      const hasSearch = searchQuery.trim().length > 0;
-      const filteredAdvs = getFilteredAdvocates();
-      const unassignedCount = directory.advocates.filter(a => !a.clerkIds || a.clerkIds.length === 0).length;
-      const estPages = (n, per) => Math.max(1, Math.ceil(n / per));
-
       const customEntries = customPdfDocs.map(rec => ({
         id: rec.id,
         title: rec.title,
@@ -2871,12 +2915,12 @@
           formatLabel: "PDF • Form",
           metaSummary: "1 Page • Official Form",
           assetUrls: [
-          "./APPEARANCE_NOTE.pdf"
+            "./assets/aistudio/APPEARANCE_NOTE_8e57f286.pdf",
+            "./public/assets/aistudio/APPEARANCE_NOTE_8e57f286.pdf"
           ],
           recordCount: 1,
           estimatedPages: 1
-        },
-        
+        }
       ].filter(d => !hiddenBuiltInPdfIds.includes(d.id));
 
       return customEntries.concat(builtIns);
@@ -2892,9 +2936,15 @@
 
       const chipsRow = document.getElementById("docsCategoryChipsRow");
       if (chipsRow) {
-        chipsRow.innerHTML = categories.map(cat => `
-          <div class="filter-pill ${activeDocCategory === cat ? "active" : ""}" data-doc-cat="${escapeHtml(cat)}">${cat === "All" ? "All Documents" : escapeHtml(cat)}</div>
-        `).join("");
+        if (docs.length === 0) {
+          chipsRow.style.display = "none";
+          chipsRow.innerHTML = "";
+        } else {
+          chipsRow.style.display = "flex";
+          chipsRow.innerHTML = categories.map(cat => `
+            <div class="filter-pill ${activeDocCategory === cat ? "active" : ""}" data-doc-cat="${escapeHtml(cat)}">${cat === "All" ? "All Documents" : escapeHtml(cat)}</div>
+          `).join("");
+        }
       }
 
       const restoreBtn = document.getElementById("btnAdminRestorePdfs");
@@ -2917,11 +2967,16 @@
       if (navBadge) navBadge.textContent = docs.length;
 
       if (currentTab === "docs") {
-        document.getElementById("resultsCountNotice").textContent = "Showing " + filtered.length + " of " + docs.length + " PDF Documents";
+        document.getElementById("resultsCountNotice").textContent = docs.length === 0
+          ? "No PDF Documents"
+          : ("Showing " + filtered.length + " of " + docs.length + " PDF Documents");
       }
 
       if (filtered.length === 0) {
-        grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 36px 20px; color: var(--text-secondary);">No matching PDF documents found.</div>';
+        const emptyText = docs.length === 0
+          ? (isAdmin ? "No PDF documents yet. Tap + Add PDF above to upload one." : "No PDF documents available yet.")
+          : "No matching PDF documents found.";
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 36px 20px; color: var(--text-secondary);">' + emptyText + '</div>';
         return;
       }
 
