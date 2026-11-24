@@ -2908,8 +2908,7 @@
       const builtIns = [
         {
           id: "appearance_note",
-          title: "Appearance Note (High Court of Gujarat)",
-          description: "Official High Court of Gujarat Appearance Note form addressed to The Registrar for advocate appearance / VP filing.",
+          title: "Appearance Note",
           category: "Court Forms",
           fileName: "APPEARANCE_NOTE.pdf",
           formatLabel: "PDF • Form",
@@ -2920,7 +2919,23 @@
           ],
           recordCount: 1,
           estimatedPages: 1
+        },
+        {
+          id: "ds_affidavit_format",
+          title: "DS Affidavit Format",
+          category: "Court Forms",
+          fileName: "DS Affidavit Formet.pdf",
+          formatLabel: "PDF • Form",
+          metaSummary: "1 Page • Official Form",
+          assetUrls: [
+            "./assets/aistudio/DS Affidavit Formet.pdf",
+            "./public/assets/aistudio/DS Affidavit Formet.pdf",
+            "./DS Affidavit Formet.pdf"
+          ],
+          recordCount: 1,
+          estimatedPages: 1
         }
+      ]
       ].filter(d => !hiddenBuiltInPdfIds.includes(d.id));
 
       return customEntries.concat(builtIns);
